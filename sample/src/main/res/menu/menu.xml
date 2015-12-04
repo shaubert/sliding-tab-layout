@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/add_item"
+        android:title="Add"/>
+
+    <item android:id="@+id/remove_item"
+        android:title="Remove"/>
+
+    <item android:id="@+id/stretch_mode_item"
+        android:title="Mode">
+        <menu>
+            <item android:id="@+id/if_less_then_3_item"
+                android:title="If less then 3 items"
+                android:checkable="true"/>
+            <item android:id="@+id/if_possible"
+                android:title="If possible"
+                android:checkable="true"/>
+            <item android:id="@+id/always"
+                android:title="Always"
+                android:checkable="true"/>
+            <item android:id="@+id/none"
+                android:title="None"
+                android:checkable="true"/>
+        </menu>
+    </item>
+
+</menu>

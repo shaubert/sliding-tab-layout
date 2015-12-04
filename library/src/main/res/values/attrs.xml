@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+  <attr name="stl_slidingTabLayoutStyle" format="reference"/>
+
+   <declare-styleable name="STL_SlidingTabLayoutTheme">
+        <attr name="stl_slidingTabTextAppearance" format="reference"/>
+        <attr name="stl_slidingTabStripColor" format="color|reference"/>
+   </declare-styleable>
+    
+</resources>

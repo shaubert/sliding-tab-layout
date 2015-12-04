@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="STL_DefaultStyle">
+        <item name="stl_slidingTabTextAppearance">@style/STL_SlidingTabTextAppearance</item>
+        <item name="stl_slidingTabStripColor">@android:color/holo_blue_dark</item>
+    </style>
+
+    <style name="STL_SlidingTabTextAppearance" parent="android:TextAppearance.Holo.Large">
+        <item name="android:textSize">14sp</item>
+    </style>
+
+</resources>
