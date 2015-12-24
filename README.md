@@ -7,7 +7,7 @@ Improved google's version of [SlidingTabLayout] (http://developer.android.com/sa
         maven{url "https://github.com/shaubert/maven-repo/raw/master/releases"}
     }
     dependencies {
-        compile 'com.shaubert.ui.slidingtab:library:1.0.1'
+        compile 'com.shaubert.ui.slidingtab:library:1.0.2'
     }
 
 ### Core changes:
