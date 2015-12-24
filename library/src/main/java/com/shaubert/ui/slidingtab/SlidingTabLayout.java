@@ -76,7 +76,8 @@ public class SlidingTabLayout extends HorizontalScrollView {
     }
 
     private static final int TITLE_OFFSET_DIPS = 24;
-    private static final int TAB_VIEW_PADDING_DIPS = 16;
+    private static final int TAB_VIEW_PADDING_HORIZ_DIPS = 12;
+    private static final int TAB_VIEW_PADDING_VERT_DIPS = 8;
 
     private static final int DEFAULT_HEIGHT_DP = 12;
 
@@ -226,8 +227,15 @@ public class SlidingTabLayout extends HorizontalScrollView {
                 outValue, true);
         textView.setBackgroundResource(outValue.resourceId);
 
-        int padding = (int) (TAB_VIEW_PADDING_DIPS * getResources().getDisplayMetrics().density);
-        textView.setPadding(padding, padding, padding, padding);
+        float density = getResources().getDisplayMetrics().density;
+        int paddingHoriz = (int) (TAB_VIEW_PADDING_HORIZ_DIPS * density);
+        int paddingVert = (int) (TAB_VIEW_PADDING_VERT_DIPS * density);
+        if (getLayoutParams() != null && getLayoutParams().height > 0) {
+            int maxHeight = getLayoutParams().height;
+            int maxVertPadding = Math.max(0, (maxHeight - (int) textView.getTextSize()) / 2);
+            paddingVert = Math.min(maxVertPadding, paddingVert);
+        }
+        textView.setPadding(paddingHoriz, paddingVert, paddingVert, paddingHoriz);
 
         return textView;
     }
