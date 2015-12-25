@@ -150,7 +150,7 @@ class SlidingTabStrip extends LinearLayout {
 
                 if (totalWidth < tabLayoutMeasuredWidth) {
                     int childrenWithMaxWidthSize = maxWidth * childCount;
-                    int childWidthExtra = (tabLayoutMeasuredWidth - totalWidth) / childCount;
+                    int childWidthExtra = childCount > 0 ? (tabLayoutMeasuredWidth - totalWidth) / childCount : 0;
                     for (int i = 0; i < childCount; i++) {
                         View child = getChildAt(i);
                         LayoutParams layoutParams = (LayoutParams) child.getLayoutParams();
