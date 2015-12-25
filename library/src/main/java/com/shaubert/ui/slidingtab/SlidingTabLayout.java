@@ -25,10 +25,7 @@ import android.support.v4.view.ViewPager;
 import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.util.TypedValue;
-import android.view.Gravity;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewTreeObserver;
+import android.view.*;
 import android.widget.HorizontalScrollView;
 import android.widget.TextView;
 
@@ -235,7 +232,7 @@ public class SlidingTabLayout extends HorizontalScrollView {
             int maxVertPadding = Math.max(0, (maxHeight - (int) textView.getTextSize()) / 2);
             paddingVert = Math.min(maxVertPadding, paddingVert);
         }
-        textView.setPadding(paddingHoriz, paddingVert, paddingVert, paddingHoriz);
+        textView.setPadding(paddingHoriz, paddingVert, paddingHoriz, paddingVert);
 
         return textView;
     }
