@@ -22,6 +22,7 @@ import android.graphics.Color;
 import android.graphics.Paint;
 import android.util.AttributeSet;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.LinearLayout;
 
 class SlidingTabStrip extends LinearLayout {
@@ -116,6 +117,8 @@ class SlidingTabStrip extends LinearLayout {
             SlidingTabLayout tabLayout = (SlidingTabLayout) getParent();
             SlidingTabLayout.StretchOption stretchOption = tabLayout.getStretchOption();
 
+            int hMode = MeasureSpec.getMode(heightMeasureSpec);
+
             int childCount = getChildCount();
             int tabLayoutMeasuredWidth = tabLayout.getMeasuredWidth();
             int fillChildWidth = childCount != 0 ? tabLayout.getMeasuredWidth() / childCount : 0;
@@ -133,6 +136,13 @@ class SlidingTabStrip extends LinearLayout {
                     case NONE:
                         layoutParams.width = LayoutParams.WRAP_CONTENT;
                         break;
+                }
+                if (layoutParams.height < 0) {
+                    if (hMode == MeasureSpec.EXACTLY) {
+                        layoutParams.height = ViewGroup.LayoutParams.MATCH_PARENT;
+                    } else {
+                        layoutParams.height = ViewGroup.LayoutParams.WRAP_CONTENT;
+                    }
                 }
                 child.forceLayout();
             }
