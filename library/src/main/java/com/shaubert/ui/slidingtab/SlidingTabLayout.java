@@ -216,7 +216,7 @@ public class SlidingTabLayout extends HorizontalScrollView {
             textView.setTextAppearance(context, SlidingTabLayoutStyle.getSlidingTabTextAppearance(context));
         }
         textView.setAllCaps(true);
-        textView.setMaxLines(2);
+        textView.setSingleLine();
         textView.setEllipsize(TextUtils.TruncateAt.END);
 
         TypedValue outValue = new TypedValue();
