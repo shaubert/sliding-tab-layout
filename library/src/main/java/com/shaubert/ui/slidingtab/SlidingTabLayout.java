@@ -209,14 +209,15 @@ public class SlidingTabLayout extends HorizontalScrollView {
     protected TextView createDefaultTabView(Context context) {
         TextView textView = new TextView(context);
         textView.setGravity(Gravity.CENTER);
+        textView.setMaxLines(1);
+        textView.setLines(1);
+        textView.setEllipsize(TextUtils.TruncateAt.END);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             textView.setTextAppearance(SlidingTabLayoutStyle.getSlidingTabTextAppearance(context));
         } else {
             //noinspection deprecation
             textView.setTextAppearance(context, SlidingTabLayoutStyle.getSlidingTabTextAppearance(context));
         }
-        textView.setSingleLine();
-        textView.setEllipsize(TextUtils.TruncateAt.END);
 
         TypedValue outValue = new TypedValue();
         getContext().getTheme().resolveAttribute(android.R.attr.selectableItemBackground,
